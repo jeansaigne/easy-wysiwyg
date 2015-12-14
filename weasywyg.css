@@ -39,6 +39,7 @@
         height: calc(100% - 120px);
         overflow-y: scroll;
         margin: 60px auto;
+        background-color: white;
     }
 
     #weasywygWriter {
