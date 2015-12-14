@@ -41,4 +41,12 @@ Htmhelper.prototype.createElement = function(type, attrs) {
     return element;
 };
 
+Htmhelper.prototype.findParentWithClass = function(element, classToFind) {
+    if (element.classList.contains(classToFind)) {
+        return element;
+    } else {
+        return this.findParentWithClass(element.parentNode, classToFind);
+    }
+};
+
 var hh = new Htmhelper();

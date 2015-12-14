@@ -1,5 +1,5 @@
 #weasywygOverlay {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
@@ -24,24 +24,26 @@
         cursor: pointer;
     }
 
-    #weasywygWriterContainer {
+    #weasywygBorderContainer {
         position: absolute;
         top: 15%;
         left: 10%;
         width: 80%;
         height: 80%;
-        border: groove 1px black;
         border-radius: 10px;
-        box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.5);
-        background-color: white;
+        box-shadow: 0px 0px 50px 25px rgb(255, 64, 1);
+    }
+
+    #weasywygWriterContainer {
+        width: calc(100% - 120px);
+        height: calc(100% - 120px);
         overflow-y: scroll;
+        margin: 60px auto;
     }
 
     #weasywygWriter {
-        height: calc(100% - 60px);
         background-color: white;
-        border-radius: 10px;
-        padding: 30px;
+        padding: 20px;
         cursor: auto;
     }
 
@@ -50,23 +52,196 @@
         top: calc(15% - 50px);
         left: 10%;
         width: 80%;
-        height: 40px;
-        border: groove 1px black;
-        border-radius: 10px;
-        box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.5);
-        background-color: white;
+        text-align: center;
     }
 
     #weasywygToolbox > .textarea-styler {
         cursor: pointer;
         overflow: hidden;
-        border: solid 1px black;
-        border-radius: 0;
+        border-radius: 5px;
         display: inline-block;
-        width: 30px;
-        height: 30px;
+        width: 34px;
+        height: 34px;
         padding: 0;
-        margin: 0;
+        margin: 2px;
     }
 
+    #weasywygBorderContainerLeft {
+        position: absolute;
+        left: 0;
+        top: 60px;
+        height: calc(100% - 120px);
+        width: 60px;
+        background-image: url(img/borderleft-weasywyg.jpg);
+        background-size: 100%;
+    }
+    
+    #weasywygBorderContainerTopLeft {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 60px;
+        width: 60px;
+        background-image: url(img/corner-weasywyg.jpg);
+        background-size: 100%;
+    }
+
+    #weasywygBorderContainerTop {
+        position: absolute;
+        left: 60px;
+        top: 0;
+        height: 60px;
+        width: calc(100% - 120px);
+        background-image: url(img/bordertop-weasywyg.jpg);
+        background-size: auto 100%;
+    }
+
+    #weasywygBorderContainerTopRight {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 60px;
+        width: 60px;
+        background-image: url(img/corner-weasywyg.jpg);
+        transform: rotate(90deg);
+        background-size: 100%;
+    }
+
+    #weasywygBorderContainerRight {
+        position: absolute;
+        right: 0px;
+        top: 60px;
+        width: 60px;
+        height: calc(100% - 120px);
+        background-image: url(img/borderleft-weasywyg.jpg);
+        transform: rotate(180deg);
+        background-size: 100%;
+    }
+
+    #weasywygBorderContainerBottomRight {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 60px;
+        width: 60px;
+        background-image: url(img/corner-weasywyg.jpg);
+        transform: rotate(180deg);
+        background-size: 100%;
+    }
+
+    #weasywygBorderContainerBottom {
+        position: absolute;
+        left: 60px;
+        bottom: 0;
+        height: 60px;
+        width: calc(100% - 120px);
+        background-image: url(img/bordertop-weasywyg.jpg);
+        transform: rotate(180deg);
+        background-size: auto 100%;
+    }
+
+    #weasywygBorderContainerBottomLeft {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 60px;
+        width: 60px;
+        background-image: url(img/corner-weasywyg.jpg);
+        transform: rotate(-90deg);
+        background-size: 100%;
+    }
+}
+
+#weasywygToolbox > .textarea-styler:hover {
+    background-image: url(img/iconsetblack.jpg);
+}
+
+.weasywyg-undo {
+    background-image: url(img/iconset.jpg);
+    background-position: -272px -104px;
+}
+
+.weasywyg-redo {
+    background-image: url(img/iconset.jpg);
+    background-position: -314px -104px;
+}
+
+.weasywyg-bold {
+    background-image: url(img/iconset.jpg);
+    background-position: -18px -20px;
+}
+
+.weasywyg-italic {
+    background-image: url(img/iconset.jpg);
+    background-position: -60px -20px;
+}
+
+.weasywyg-underline {
+    background-image: url(img/iconset.jpg);
+    background-position: -102px -20px;
+}
+
+.weasywyg-strikethrough {
+    background-image: url(img/iconset.jpg);
+    background-position: -144px -20px;
+}
+
+.weasywyg-alignleft {
+    background-image: url(img/iconset.jpg);
+    background-position: -271px -20px;
+}
+
+.weasywyg-alignright {
+    background-image: url(img/iconset.jpg);
+    background-position: -313px -20px;
+}
+
+.weasywyg-aligncenter {
+    background-image: url(img/iconset.jpg);
+    background-position: -355px -20px;
+}
+
+.weasywyg-alignjustify {
+    background-image: url(img/iconset.jpg);
+    background-position: -398px -20px;
+}
+
+.weasywyg-outdent {
+    background-image: url(img/iconset.jpg);
+    background-position: -272px -63px;
+}
+
+.weasywyg-indent {
+    background-image: url(img/iconset.jpg);
+    background-position: -229px -63px;
+}
+
+.weasywyg-image {
+    background-image: url(img/iconset.jpg);
+    background-position: -187px -63px;
+}
+
+.weasywyg-fontbackground {
+    background-image: url(img/iconset.jpg);
+    background-position: -103px -63px;
+}
+
+.weasywyg-fontcolor {
+    background-image: url(img/iconset.jpg);
+    background-position: -60px -63px;
+}
+
+.weasywyg-link {
+    background-image: url(img/iconset.jpg);
+    background-position: -18px -63px;
+}
+
+.weasywyg-fontsize {
+    background-image: url(img/iconset.jpg);
+    background-position: -60px -105px;
+}
+
+.weasywyg-embed {
+    background-image: url(img/iconset.jpg);
+    background-position: -187px -105px;
 }
